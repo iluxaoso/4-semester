@@ -52,6 +52,7 @@ std::string toLower(const std::string& str)
 std::string punct(const std::string& str)
 {
 	std::string nstr(str);
+	// nstr.back() <=> nstd[nstd.size() - 1]
 	while (!isalpha(nstr[nstr.size() - 1]))
 	{
 		nstr.pop_back();
@@ -60,6 +61,9 @@ std::string punct(const std::string& str)
 	return nstr;
 }
 
+/*
+лучше передать fName по ссылке. видимо забыли & поставить
+*/
 std::map<std::string, int> getWordFreq(const std::string fName)
 {
 	std::ifstream file(fName);
