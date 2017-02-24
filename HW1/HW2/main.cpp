@@ -13,7 +13,7 @@ std::string prepare(const std::string& );
 std::string toLower(const std::string& );
 std::string punct  (const std::string& );
 
-std::map<std::string, int> getWordFreq(const std::string );
+std::map<std::string, int> getWordFreq(const std::string& );
 
 int outPut(const std::map<std::string, int>&);
 
@@ -64,7 +64,7 @@ std::string punct(const std::string& str)
 /*
 лучше передать fName по ссылке. видимо забыли & поставить
 */
-std::map<std::string, int> getWordFreq(const std::string fName)
+std::map<std::string, int> getWordFreq(const std::string& fName)
 {
 	std::ifstream file(fName);
 	if (!file.is_open())
