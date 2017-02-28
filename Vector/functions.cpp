@@ -82,7 +82,7 @@ Vector2 Vector2::perp()
 	return Vector2(x / len(), (-x) / tan(y / x) / len());
 }
 
-Vector2 Vector2::rotate(double k)//!угол в радианах
+Vector2 Vector2::rotate(double k)//!РІ СЂР°РґРёР°РЅР°С…
 {
 	double new_x = x;
 	double new_y = y;
@@ -93,7 +93,7 @@ Vector2 Vector2::rotate(double k)//!угол в радианах
 	return Vector2(x, y);
 }
 
-const Vector2 Vector2::getRotated(double k)//!угол в радианах
+const Vector2 Vector2::getRotated(double k)//!РІ СЂР°РґРёР°РЅР°С…
 {
 	return Vector2(x, y).rotate(k);
 }
