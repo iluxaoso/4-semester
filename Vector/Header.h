@@ -8,11 +8,11 @@
 struct Vector2
 {
 private:
-	/* Как поля менять будете? Лучше в публик вынести в данном случае */
-	double x;
-	double y;
 
 public:
+	double x;
+	double y;
+	
 	Vector2(double _x = 0, double _y = 0);
 
 	~Vector2();
