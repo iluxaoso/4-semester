@@ -34,9 +34,9 @@ int DrawTriangleSerp(sf::RenderWindow& window, sf::Vector2f a, sf::Vector2f b, s
 
 	DrawTriangle(window, a, b, c);
 
-	sf::Vector2f mid1((a + b) * 0,5);
-	sf::Vector2f mid2((c + b) * 0,5);
-	sf::Vector2f mid3((a + c) * 0,5);
+	sf::Vector2f mid1 = (a + b) * 0,5f;
+	sf::Vector2f mid2 = (c + b) * 0,5f;
+	sf::Vector2f mid3 = (a + c) * 0,5f;
 
 	DrawTriangle(window, mid1, mid2, mid3);
 
