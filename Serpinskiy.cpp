@@ -34,14 +34,9 @@ int DrawTriangleSerp(sf::RenderWindow& window, sf::Vector2f a, sf::Vector2f b, s
 
 	DrawTriangle(window, a, b, c);
 
-	/*
-		Думаю, что операторы сложения и умножения на число уже переопределены ->
-		sf::Vector2f mid1((a + b) * 0.5);	 
-		....
-	*/
-	sf::Vector2f mid1((a.x + b.x) / 2, (a.y + b.y) / 2);
-	sf::Vector2f mid2((c.x + b.x) / 2, (c.y + b.y) / 2);
-	sf::Vector2f mid3((a.x + c.x) / 2, (a.y + c.y) / 2);
+	sf::Vector2f mid1((a + b) * 0,5);
+	sf::Vector2f mid2((c + b) * 0,5);
+	sf::Vector2f mid3((a + c) * 0,5);
 
 	DrawTriangle(window, mid1, mid2, mid3);
 
@@ -68,17 +63,6 @@ int main()
 	  }
 
 	  window.clear(sf::Color::Red);
-
-	  
-	  
-	  /*sf::CircleShape circle(150);
-
-	  circle.setPosition(5, 100);
-	  circle.setFillColor(sf::Color(150, 50, 250));
-	  circle.setOutlineThickness(5);
-	  circle.setOutlineColor(sf::Color(250, 150, 100));
-	  window.draw(circle);
-	  */
 
 	  DrawTriangleSerp(window, sf::Vector2f(10, 590), sf::Vector2f(790, 590), sf::Vector2f(400, 10), 10);
 	
