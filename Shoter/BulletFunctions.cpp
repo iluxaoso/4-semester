@@ -52,7 +52,7 @@ void Bullet::update(double dt)
 
 bool Bullet::onMap(const Vector2& size) const
 {
-	/*bool MapOK = true;
+	bool MapOK = true;
 	if (position.x + radius.x < 0)
 	{
 		MapOK = false;
@@ -70,43 +70,5 @@ bool Bullet::onMap(const Vector2& size) const
 		MapOK = false;
 	}
 
-	return MapOK;*/
-	Vector2 bulletPosition = GetPosition();
-	double bulletX = bulletPosition.x;
-	double bulletY = bulletPosition.y;
-
-	double bulletDiametr = GetRadius() * 2;
-	double sizeX = size.x - bulletDiametr;
-	double sizeY = size.y - bulletDiametr;
-
-	bool boardOk = true;
-
-	/*
-	вместо кучи строк можно написать
-	return bulletX >= 0 && bulletX <= sizeX && bulletY >= 0 && bulletY <= sizeY;
-	*/
-	if (bulletX < 0)
-	{
-		return false;
-	}
-
-	if (bulletY < 0)
-	{
-		return false;
-	}
-
-	/*
-	Точно не bulletX >= sizeX ?
-	*/
-	if (bulletX > sizeX)
-	{
-		return false;
-	}
-
-	if (bulletY > sizeY)
-	{
-		return false;
-	}
-
-	return true;
+	return MapOK;
 }
