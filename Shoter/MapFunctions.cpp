@@ -31,7 +31,7 @@ void Map::update(double dt)
 
 bool Map::onMap()
 {
-	/*bool mapOK = true;
+	bool mapOK = true;
 	if (hero.position.x < hero.radius)
 	{
 		hero.velocity = 0;
@@ -53,44 +53,5 @@ bool Map::onMap()
 		mapOK = false;
 	}
 
-	return mapOK;*/
-	Vector2 heroPosition = hero.GetPosition();
-	double heroX = heroPosition.x;
-	double heroY = heroPosition.y;
-
-	double heroDiametr = hero.GetRadius() * 2;
-	double sizeX = size.x - heroDiametr;
-	double sizeY = size.y - heroDiametr;
-
-	bool boardOk = true;
-
-	if (heroX < 0)
-	{
-		hero.SetPosition(Vector2(0, heroY));
-
-		boardOk = false;
-	}
-
-	if (heroY < 0)
-	{
-		hero.SetPosition(Vector2(heroX, 0));
-
-		boardOk = false;
-	}
-
-	if (heroX > sizeX)
-	{
-		hero.SetPosition(Vector2(sizeX, heroY));
-
-		boardOk = false;
-	}
-
-	if (heroY > sizeY)
-	{
-		hero.SetPosition(Vector2(heroX, sizeY));
-
-		boardOk = false;
-	}
-
-	return boardOk;
+	return mapOK;
 }
