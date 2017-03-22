@@ -165,8 +165,11 @@ int Shooter::DrawMap()
 
 	map.hero.SetPosition(Vector2(map.hero.position.x, map.hero.position.y));
 	hero.setRotation(360. - map.hero.GetDirection().getAngleBetween(Vector2(0, -1)));
+	
+	Vector2f bulletPosition;
+	sf::CircleShape bulletShape(BULLET_RADIUS);
 
-/*	for (auto& bul : bullets)
+	for (auto& bul : bullets)
 	{
 		bulletShape.setFillColor(sf::Color::Yellow);
 		bulletShape.setPosition(bulletPosition.x, bulletPosition.y);
@@ -176,20 +179,6 @@ int Shooter::DrawMap()
 		bul.setPosition(sf::Vector2f(bulletPosition.x, bulletPosition.y));
 
 		window.draw(bul);
-	}*/
-	Vector2 bulletPosition;
-	sf::CircleShape bulletShape(BULLET_RADIUS);
-
-	for (int i = 0; i < map.bullets.size(); i++)
-	{
-		bulletShape.setFillColor(sf::Color::Red);
-		bulletShape.setPosition(bulletPosition.x, bulletPosition.y);
-		bullets.push_back(bulletShape);
-
-		bulletPosition = map.bullets[i].GetPosition();
-		bullets[i].setPosition(bulletPosition.x, bulletPosition.y);
-
-		window.draw(bullets[i]);
 	}
 	
 	window.draw(hero);
